@@ -4,7 +4,6 @@ import csv
 from datetime import date
 from config import *
 
-
 iloxxTemplate = {
     'Firma': '',
     'Name': '',
@@ -22,7 +21,6 @@ iloxxTemplate = {
     'Nachnamebetrag': ''
 }
 
-
 i = 0
 offset = 0
 # get data from ecwid api and store to json
@@ -36,7 +34,7 @@ while True:
     print(data)
     i += 1
     offset += 100
-    if offset == 500:
+    if offset == 700:
         break
 outfile.close()
 
@@ -68,7 +66,7 @@ while True:
                         iloxxTemplate['Land'] = ""
                     iloxxTemplate['E-Mail'] = data['items'][v]['email'] # email
                     iloxxTemplate['Referenz'] = "Minimusiker-Bestellung"
-                    iloxxTemplate['Inhalt'] = "Buch"
+                    iloxxTemplate['Inhalt'] = "Adventskalender"
                     # print(data['items'][v]['billingPerson']['name']) # firma
                     # print(data['items'][v]['invoices'][0]['created']) # telefon
                     # print(data['items'][v]['invoices'][0]['created']) # kundennummer
